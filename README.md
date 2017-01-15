@@ -1,6 +1,6 @@
-# yield-prediction-exercise
-
-predict wheat yield for several counties in the United States
+# Yield-prediction-exercise
+This repository is an example to predict winter wheat yield for several counties in the United States.
+Source from https://github.com/aerialintel/data-science-challenge
 
 ## Synopsis
 
