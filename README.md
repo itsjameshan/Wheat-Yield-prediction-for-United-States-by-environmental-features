@@ -4,7 +4,7 @@ Source from https://github.com/aerialintel/data-science-challenge
 
 ## A brief description of the problem and how you chose to solve it.
 
-At the top of the file there should be a short introduction and/ or overview that explains **what** the project is. This description should match descriptions added for package managers (Gemspec, package.json, etc.)
+The probelm is we would like to predict the winder weahter yield in the United States by given geolocations (e.g., latitude and longtitude). The dataset includes two years 1) weather valirables such as temperature, precipitation,    
 
 ## A high level timeline telling us what you tried and what the results from that were
 
@@ -30,8 +30,3 @@ Describe and show how to run the tests with code examples.
 
 Let people know how they can dive into the project, include important links to things like issue trackers, irc, twitter accounts if applicable.
 
-## License
-
-A short snippet describing the license (MIT, Apache, etc.)
-
-Analyze Personality
