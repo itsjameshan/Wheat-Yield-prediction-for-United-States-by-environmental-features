@@ -31,8 +31,7 @@ Source from https://github.com/aerialintel/data-science-challenge
 - Regression. Model: Yield ~ all except CountyName, State, and Date    
   Accracy increased: 0.23 
 - SVM (polynomy): computer not respond
-- RandomForest: computer craushed
-
+- RandomForest: computer not respond
 
 ## What your final / best approach was and how it performed
 -  Only the linear regression returns an accuracy score. Other algorithms failed to return a score.
@@ -57,8 +56,8 @@ Challenges
 
 ## What did you learn along the way?
 
--  Use one/mutiple time series features (weather data) to train and predict one laebl (one yield value) is not the way to predict yield. Especialywhen when the yield is stronly related to the cultivar used (missed in dataset) and enviroment condition (weather, soil, and geolocaiton), only use seasonal weather data to train the model to predict yield is inadequent. 
--  Solution: a one vs one training. Use 
+-  Use one/mutiple time series features (weather data) to train and predict one label (one yield value) may not be the way to predict yield. Especialy when when the yield is stronly related to the cultivar used (missed in dataset) and enviroment condition (weather, soil, and geolocaiton), only use seasonal weather data to train the model to predict yield is inadequent. 
+-  Solution: add additional data to the dataset which representive geo-features. Such as soil features, what soiltype for thegiven geolocations. For example, Farm business network, a ag 
 
 ## If you had more time, what would you improve?
 
