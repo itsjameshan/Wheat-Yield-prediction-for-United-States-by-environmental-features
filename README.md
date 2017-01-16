@@ -6,14 +6,14 @@ Source from https://github.com/aerialintel/data-science-challenge
 
 - The probelm is we would like to predict the winter weahter yield in the United States by a given geolocation (e.g., latitude and longtitude). The dataset includes two years 1) location and time such as county name, state, latitude, and longtitude, 2) and raw weather features such as temperature, precipitation, wind speed, and pressure, and 3) raw crop physiological features such as NDVI, day in season, and yield (label).  
 - Due to the natural of data included weather varaibles, I immediatelly recalled to use weather features to conduct a crop modeling by WOFOST to produce the simulated yield compared to the actual yield (label). In the model, this is several specific winter wheat modules can be used for yield simulation. Pressure and temperature will be used to calculate the ET demand, and leaf area index (LAI) will be caculated by grows degree days (GDD) accumulation.
-- However, I decided to try different machine learning algorithms by scikit leanr libraries includes regression, SVM, and randomforest etc. to train the model for predicting yield. 
+- However, I decided to try different machine learning algorithms by scikit leanr libraries includes regression, SVM, and DecisionTree etc. to train the model for predicting yield. 
 
 ## A high level timeline telling us what you tried and what the results from that were
 
 1.Data wrangling:
 - Read two .csv files and use pandas library to stack them to a single one. The reason is for training the model, it's better to have more yield data. The year variation might be considered due to the weather valirability in two years. However, due to high genetype and enviroment interation (G x E), the year valiration can be ignored.
 - Several unecessary columns were droped. Due to data entry is in a daily base, features such as precipitationType and windBearing are not important. Two types of weather features in the dataset are important, temperature and accumulated precipitation. Because temperatureMax and temperatureMin, which determines the daily cummulated heat (GDD = (temperatureMax + temperatureMin) /2 - TemperatureBase). This is the key to decide how fast the weahter will grow. Also, minimum temperature is important for winter wheat because it need vernalization (cold temperature) to inducing flowering. Another feature is precipitation, which determines if wheat can get enough wate supply. The acumulated precipitation is more imporatant than its form or intensity, unless some region get flooded. DayInSeason determines will wheat can grow longer. The longer it grows, the more biomass (yield) it can accumulate.
-- The keeped columns included precipAccumulation,averge temperature,temperatureMin,temperatureMax,DayInSeason, NDVI ,Yield.
+- The kept columns included precipAccumulation,averge temperature,temperatureMin,temperatureMax,DayInSeason, NDVI ,Yield.
 
 2.Quanlity control of the data:
 - The accumulated precipitation was 19 inches maxiumn which makes sense since most of winter wheat region are relative dry. 
@@ -24,14 +24,14 @@ Source from https://github.com/aerialintel/data-science-challenge
 - Regression. Model: Yield ~ precipAccumulatio + TemperatureAverage + temperatureMin + DayInSeason    
   Very low accurary/score: 0.04 , (accuracy = clf.score(X_test, y_test))
 - SVM (polynomy): computer not respond
-- RandomForest: computer crushed
+- DecisionTree: computer crushed
 
 4.Iteriate:
-  Due to the low accurary, including droped weather feature in the training to see whether the accuracy will increase
+  Due to the low accurary, including droped weather features in the training to see whether the accuracy will increase
 - Regression. Model: Yield ~ all except CountyName, State, and Date    
   Accracy increased: 0.23 (accuracy = clf.score(X_test, y_test))
 - SVM (polynomy): computer not respond
-- RandomForest: computer not respond
+- DecisionTree: 0.48, scores = cross_val_score(clf, X, y)
 
 ## What your final / best approach was and how it performed
 -  Only the linear regression returns an accuracy score. Other algorithms failed to return a score.
@@ -39,8 +39,8 @@ Source from https://github.com/aerialintel/data-science-challenge
 ## Technical choices you made during the project
 Algorithms:
 -  Regression: simple, aoid overfitting.
--  SVM (polynomy): 
-
+-  SVM (polynomy): catch interaction weather features
+-  
 Tool:
 -  Python
    pro: easy to test mutiple algorithms (most of time one line of code)
@@ -66,6 +66,10 @@ Challenges
 
 ## If you had more time, what would you improve?
 The part I would improve if I have more time:
--  Use recursive neural network (RNN) LSTMs to predic the yield.The reason is RNN can 
+-  Use deep neural newwork to predict the yield. The reason the deep learning outperform many other algorithms. Linterature has been reported to use ANN for wheat yield prediction.
+-  Add additional higher leavel feature.
+   --  1) Evapotranspiration (ET). Use FAO54 method to calculate referece ET for wheat. Use the weather features such as solar radiation (pysolar library), temperature, relative humidity, and wind speed to cauclate ET. ET describes the water demand of the crop from the enviroment.
+   --  2) Soil data. Access SSURGO  database to get the soil property which can determine how many water the soil can hold and provide to crop. This part describe the water supply from soil.
+   --  3) The ratio of ET/Soi wate 
 
 
