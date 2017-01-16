@@ -71,7 +71,7 @@ Challenges
 The part I would improve if I have more time:
 -  Use the deep neural network to predict the yield. The reason the deep learning outperforms many other algorithms. Literature has been reported to use ANN for wheat yield prediction. http://ieeexplore.ieee.org/document/7006239/?reload=true
 And I also would like to add additional higher level features.
--  1) Evapotranspiration (ET) (**the code for calculating ET is uploaded**). Use FAO54 Penman-Monteith method to calculate reference ET for wheat. Use the weather features such as solar radiation (pysolar library), temperature, relative humidity, and wind speed to calculate ET. ET describes the water demand of the crop from the environment. 
+-  1) Evapotranspiration (ET) (**a sample code for calculating ET is uploaded**). Use FAO54 Penman-Monteith method to calculate reference ET for wheat. Use the weather features such as solar radiation (pysolar library), temperature, relative humidity, and wind speed to calculate ET. ET describes the water demand of the crop from the environment. 
 -  2) Soil data. Access SSURGO database to get the soil property which can determine how many water the soil can hold and provide to the crop. This part describe the water supply from soil.
 -  3) The ratio of ET/soil water is a good indicator of if crop will have sufficient water during season, thus affect its yield. 
 -  4) Use WOFOST crop model modules to generate higher crop features such as LAI, total above ground biomass, daily dry matter increase rate. Those features may add accuracy to predicting yield.
