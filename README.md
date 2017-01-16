@@ -12,7 +12,7 @@ Source from https://github.com/aerialintel/data-science-challenge
 
 1.Data wrangling:
 - Read two .csv files and use pandas library to stack them to a single one. The reason is for training the model, it's better to have more yield data. The year variation might be considered due to the weather valirability in two years. However, due to high genetype and enviroment interation (G x E), the year valiration can be ignored.
-- Several unecessary columns were droped. Due to data entry is in a daily base, features such as precipitationType and windBearing are not important. Two types of weather features in the dataset are important, temperature and accumulated precipitation. Because temperatureMax and temperatureMin, which determines the daily cummulated heat (GDD = (temperatureMax + temperatureMin) /2 - TemperatureBase). This is the key to decide how fast the weahter will grow. Also, minimum temperature is important for winter wheat because it need vernalization (cold temperature) to inducing flowering. Another feature is precipitation, which determines if wheat can get enough wate supply. The acumulated precipitation is more imporatant than its form or intensity, unless some region get flooded.
+- Several unecessary columns were droped. Due to data entry is in a daily base, features such as precipitationType and windBearing are not important. Two types of weather features in the dataset are important, temperature and accumulated precipitation. Because temperatureMax and temperatureMin, which determines the daily cummulated heat (GDD = (temperatureMax + temperatureMin) /2 - TemperatureBase). This is the key to decide how fast the weahter will grow. Also, minimum temperature is important for winter wheat because it need vernalization (cold temperature) to inducing flowering. Another feature is precipitation, which determines if wheat can get enough wate supply. The acumulated precipitation is more imporatant than its form or intensity, unless some region get flooded. DayInSeason determines will wheat can grow longer. The longer it grows, the more biomass (yield) it can accumulate.
 - The keeped columns included precipAccumulation,averge temperature,temperatureMin,temperatureMax, DayInSeason,NDVI ,Yield.
 
 2.Quanlity control of the data:
@@ -21,7 +21,9 @@ Source from https://github.com/aerialintel/data-science-challenge
 - The NDVI values are not in a range of 0 to 1. After plot NDVI, there is not pattern of increase at the middle of the season and decrease at the end of the season. Thus, NDVI is not considered. 
 
 3.Model selection:
-- Regression. 
+- Regression. Model: Yield ~ precipAccumulatio  + TemperatureAverage + temperatureMin + DayI   
+  Very low accurary : 0.04
+- SVM (polynomy).  
 ## What your final / best approach was and how it performed
 
 
