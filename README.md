@@ -4,13 +4,14 @@ Source from https://github.com/aerialintel/data-science-challenge
 
 ## A brief description of the problem and how you chose to solve it.
 
-The probelm is we would like to predict the winter weahter yield in the United States by a given geolocation (e.g., latitude and longtitude). The dataset includes two years 1) location and time such as county name, state, latitude, and longtitude, 2) and raw weather features such as temperature, precipitation, wind speed, and pressure, and 3) raw crop physiological features such as NDVI, day in season, and yield (label).   
-To solve thew problem, I decided to try different machine learning algorithm includes regression, randomforest to train the model for predicting yield. 
+The probelm is we would like to predict the winter weahter yield in the United States by a given geolocation (e.g., latitude and longtitude). The dataset includes two years 1) location and time such as county name, state, latitude, and longtitude, 2) and raw weather features such as temperature, precipitation, wind speed, and pressure, and 3) raw crop physiological features such as NDVI, day in season, and yield (label).  
+Due to the natural of data included weather varaibles, I immediatelly recalled to use weather valiables to conduct a crop modeling by WOFOST to produce the simulated yield compared to the actual yield (label). In the model, this is several specific winter wheat modules can be used for yield simulation. Pressure and temperature will be used to calculate the ET demand, and leaf area index (LAI) will be caculated by GDD
+However, I decided to try different machine learning algorithm includes regression, randomforest to train the model for predicting yield. 
 
 ## A high level timeline telling us what you tried and what the results from that were
 
-Show what the library does as concisely as possible, developers should be able to figure out **how** your project solves their problem by looking at the code example. Make sure the API you are showing off is obvious, and that your code is short and concise.
-
+1.Data wrangling
+Read two .csv files and use pandas library to stack them to a single one. The reason is for training the model, it's better to have more yield data. The year variation may be considered.   
 ## What your final / best approach was and how it performed
 
 A short description of the motivation behind the creation and maintenance of the project. This should explain **why** the project exists.
