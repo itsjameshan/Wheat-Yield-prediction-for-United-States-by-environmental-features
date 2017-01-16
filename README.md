@@ -5,7 +5,7 @@ Source from https://github.com/aerialintel/data-science-challenge
 ## A brief description of the problem and how you chose to solve it.
 
 The probelm is we would like to predict the winter weahter yield in the United States by a given geolocation (e.g., latitude and longtitude). The dataset includes two years 1) location and time such as county name, state, latitude, and longtitude, 2) and raw weather features such as temperature, precipitation, wind speed, and pressure, and 3) raw crop physiological features such as NDVI, day in season, and yield (label).   
-To solve thew problem, I decided to try different machine learning algorithm to train the model for predicting yield. 
+To solve thew problem, I decided to try different machine learning algorithm includes regression, randomforest to train the model for predicting yield. 
 
 ## A high level timeline telling us what you tried and what the results from that were
 
