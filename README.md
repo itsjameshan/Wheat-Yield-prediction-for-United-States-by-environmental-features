@@ -42,7 +42,7 @@ Algorithms:
 -  SVM (polynomial): catch interaction weather features
 -  DecisionTree: when have a lot of “leaves”, in our case the yield values
 
-Tool:
+Tools:
 -  Python
    pro: easy to test multiple machine learning algorithms (most of time one line of code)
    con: familiarity not 
