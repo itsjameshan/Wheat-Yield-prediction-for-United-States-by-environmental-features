@@ -6,7 +6,7 @@ Source from https://github.com/aerialintel/data-science-challenge
 
 - The problem is we would like to predict the winter weather yield in the United States by a given geolocation (e.g., latitude and longitude). The dataset includes two years 1.) location and time such as county name, state, latitude, and longitude, 2.) and raw weather features such as temperature, precipitation, wind speed, and pressure, and 3.) raw crop physiological features such as NDVI, day in season, and yield (label).  
 - Due to the natural of data included weather variables, I immediately recalled using weather features to conduct crop modeling by WOFOST model (http://bit.ly/2jnY8mw) to produce the predicted yield compared to the actual yield (label). In the model, this is several specific winter wheat modules can be used for yield prediction. Pressure and temperature will be used to calculate the ET demand, and leaf area index (LAI) will be calculated by grows degree days (GDD) accumulation.
-- However, due to time constraint, I decided to try different machine learning algorithms by scikit learn library includes regression, SVM, and DecisionTree etc. to train the model for predicting yield. 
+- However, due to time constraint, I decided to try different machine learning algorithms by scikit learn library includes linear regression, SVM, and DecisionTree etc. to train the model for predicting yield. 
 
 ## A high level timeline telling us what you tried and what the results from that were
 
@@ -21,7 +21,7 @@ Source from https://github.com/aerialintel/data-science-challenge
 - The NDVI values are not in a range of 0 to 1. After plotting NDVI, there is no pattern of increase NDVI in the middle of the season and decrease at the end of the season. Thus, NDVI is not considered. 
 
 3.Model selection:
-- Regression. Model: Yield ~ precipAccumulatio + TemperatureAverage + temperatureMin + DayInSeason    
+- Linear regression. Model: Yield ~ precipAccumulatio + TemperatureAverage + temperatureMin + DayInSeason    
   Very low accurary/score: 0.04 , (accuracy = clf.score(X_test, y_test))
 - SVM (polynomy): computer not respond
 - DecisionTree: computer crushed
@@ -63,7 +63,7 @@ Challenges
 
 -  Problem 1: Use one/multiple time series features (weather data) to train and predict one label (one yield value) may not be the best way to predict yield. Especially when the yield is strongly related to the cultivar used (missed in the dataset) and environment condition (weather, soil, and geolocation), only use seasonal weather data to train the model to predict yield is inadequate. 
 -  Solution 1: add geolocation related data to the dataset which representative geo-features. Such as soil features, what soil type for the given geolocations. Soil type is very important in yield prediction. For example, Farmers business network, a farmer data platform, has tested the cultivar type and soil type combination are the most important interaction which affects corn yield. 
--  When I exclude latitude and longitude from the model, the accuracy score drops to 0.1. While when I include the latitude and longitude, the accuracy score includes to 0.23.
+-  Founding 1: The more features included in a model may slight improve the accuracy. However, the "right" feature included in the model can significantly improve predicting accuracy. For example, when I exclude latitude and longitude from the model, the accuracy score drops to 0.1. While when I include the latitude and longitude, the accuracy score includes to 0.23.
 -  Problem 2: I haven’t found the right machine learning algorithms.
 -  Solution 2: Spend more time on exploring other algorithms.
 
