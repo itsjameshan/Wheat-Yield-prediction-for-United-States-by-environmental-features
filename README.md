@@ -22,7 +22,7 @@ Source from https://github.com/aerialintel/data-science-challenge
 
 3.Model selection:
 - Regression. Model: Yield ~ precipAccumulatio + TemperatureAverage + temperatureMin + DayInSeason    
-  Very low accurary/score: 0.04 (accuracy = clf.score(X_test, y_test))
+  Very low accurary/score: 0.04 , (accuracy = clf.score(X_test, y_test))
 - SVM (polynomy): computer not respond
 - RandomForest: computer craushed
 
