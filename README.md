@@ -58,8 +58,9 @@ Challenges
 
 -  Use one/mutiple time series features (weather data) to train and predict one label (one yield value) may not be the way to predict yield. Especialy when when the yield is stronly related to the cultivar used (missed in dataset) and enviroment condition (weather, soil, and geolocaiton), only use seasonal weather data to train the model to predict yield is inadequent. 
 -  Solution: add geolocation related data to the dataset which representive geo-features. Such as soil features, what soiltype for thegiven geolocations. For example, Farmers business network, an farmer data platform, has tested the cultivar type and soil type combination are the most important interaction which affects corn yield. 
--  When I exclude latitude and longtitude from the model, the accurary 
-## If you had more time, what would you improve?
+-  When I exclude latitude and longtitude from the model, the accurary score drop to 0.1. While when I include the latitude and longtitude, the accurary score include to 0.23.
 
+## If you had more time, what would you improve?
+The part I would imrpove will be
 
 
