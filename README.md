@@ -60,10 +60,9 @@ Challenges
 - Coding: When conduct cross-validation, I get stuck on the value error of setting an array element with a sequence, which causes unequal X-train and y_train. The potential solution is to add additional values to the missed values in that array to form a 2D array which matches all the 1D array dimensionally.
 
 ## What did you learn along the way?
-
+-  Founding 1: The more features included in a model may slight improve the accuracy. However, the "right" feature included in the model can significantly improve predicting accuracy. For example, when I exclude latitude and longitude from the model, the accuracy score drops to 0.1. While when I include the latitude and longitude, the accuracy score includes to 0.23.
 -  Problem 1: Use one/multiple time series features (weather data) to train and predict one label (one yield value) may not be the best way to predict yield. Especially when the yield is strongly related to the cultivar used (missed in the dataset) and environment condition (weather, soil, and geolocation), only use seasonal weather data to train the model to predict yield is inadequate. 
 -  Solution 1: add geolocation related data to the dataset which representative geo-features. Such as soil features, what soil type for the given geolocations. Soil type is very important in yield prediction. For example, Farmers business network, a farmer data platform, has tested the cultivar type and soil type combination are the most important interaction which affects corn yield. 
--  Founding 1: The more features included in a model may slight improve the accuracy. However, the "right" feature included in the model can significantly improve predicting accuracy. For example, when I exclude latitude and longitude from the model, the accuracy score drops to 0.1. While when I include the latitude and longitude, the accuracy score includes to 0.23.
 -  Problem 2: I haven’t found the right machine learning algorithms.
 -  Solution 2: Spend more time on exploring other algorithms.
 
