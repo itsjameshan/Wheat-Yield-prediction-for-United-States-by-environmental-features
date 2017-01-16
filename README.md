@@ -24,7 +24,7 @@ Source from https://github.com/aerialintel/data-science-challenge
 - Regression. Model: Yield ~ precipAccumulatio + TemperatureAverage + temperatureMin + DayInSeason    
   Very low accurary/score: 0.04 , (accuracy = clf.score(X_test, y_test))
 - SVM (polynomy): computer not respond
-- RandomForest: computer craushed
+- RandomForest: computer crushed
 
 4.Iteriate:
   Due to the low accurary, including droped weather feature in the training to see whether the accuracy will increase
@@ -37,7 +37,11 @@ Source from https://github.com/aerialintel/data-science-challenge
 -  Only the linear regression returns an accuracy score. Other algorithms failed to return a score.
 
 ## Technical choices you made during the project
+Algorithms:
+-  Regression: simple, aoid overfitting.
+-  SVM (polynomy): 
 
+Tool:
 -  Python
    pro: easy to test mutiple algorithms (most of time one line of code)
    con: familarity 
@@ -61,6 +65,7 @@ Challenges
 -  When I exclude latitude and longtitude from the model, the accurary score drop to 0.1. While when I include the latitude and longtitude, the accurary score include to 0.23.
 
 ## If you had more time, what would you improve?
-The part I would imrpove will be
+The part I would improve if I have more time:
+-  Use recursive neural network (RNN) LSTMs to predic the yield.The reason is RNN can 
 
 
