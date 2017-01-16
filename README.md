@@ -5,8 +5,8 @@ Source from https://github.com/aerialintel/data-science-challenge
 ## A brief description of the problem and how you chose to solve it.
 
 - The probelm is we would like to predict the winter weahter yield in the United States by a given geolocation (e.g., latitude and longtitude). The dataset includes two years 1) location and time such as county name, state, latitude, and longtitude, 2) and raw weather features such as temperature, precipitation, wind speed, and pressure, and 3) raw crop physiological features such as NDVI, day in season, and yield (label).  
-- Due to the natural of data included weather varaibles, I immediatelly recalled to use weather features to conduct a crop modeling by WOFOST to produce the simulated yield compared to the actual yield (label). In the model, this is several specific winter wheat modules can be used for yield simulation. Pressure and temperature will be used to calculate the ET demand, and leaf area index (LAI) will be caculated by grows degree days (GDD) accumulation.
-- However, I decided to try different machine learning algorithms by scikit leanr libraries includes regression, SVM, and DecisionTree etc. to train the model for predicting yield. 
+- Due to the natural of data included weather varaibles, I immediatelly recalled to use weather features to conduct a crop modeling by WOFOST to produce the simulated yield compared to the actual yield (label). In the model, this is several specific winter wheat modules can be used for yield prediction. Pressure and temperature will be used to calculate the ET demand, and leaf area index (LAI) will be caculated by grows degree days (GDD) accumulation.
+- However, due to time constrain, I decided to try different machine learning algorithms by scikit leanr libraries includes regression, SVM, and DecisionTree etc. to train the model for predicting yield. 
 
 ## A high level timeline telling us what you tried and what the results from that were
 
@@ -67,9 +67,9 @@ Challenges
 ## If you had more time, what would you improve?
 The part I would improve if I have more time:
 -  Use deep neural newwork to predict the yield. The reason the deep learning outperform many other algorithms. Linterature has been reported to use ANN for wheat yield prediction.
--  Add additional higher leavel features.
-   --  1) Evapotranspiration (ET). Use FAO54 Penman-Monteith method to calculate referece ET for wheat. Use the weather features such as solar radiation (pysolar library), temperature, relative humidity, and wind speed to cauclate ET. ET describes the water demand of the crop from the enviroment.
-   --  2) Soil data. Access SSURGO database to get the soil property which can determine how many water the soil can hold and provide to crop. This part describe the water supply from soil.
-   --  3) The ratio of ET/soil water is a good indicator of if crop will have sufficient water during season, thus affect its yield. 
-
+And I also would like to add additional higher leavel features.
+-  1) Evapotranspiration (ET). Use FAO54 Penman-Monteith method to calculate referece ET for wheat. Use the weather features such as solar radiation (pysolar library), temperature, relative humidity, and wind speed to cauclate ET. ET describes the water demand of the crop from the enviroment.
+-  2) Soil data. Access SSURGO database to get the soil property which can determine how many water the soil can hold and provide to crop. This part describe the water supply from soil.
+-  3) The ratio of ET/soil water is a good indicator of if crop will have sufficient water during season, thus affect its yield. 
+-  4) Use WOFOST crop model modules to generate more higher crop development features such as LAI prediction, total above ground biomass prediction, daily dry matter increase rate. Those features may add weight to predicting yield.
 
