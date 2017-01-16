@@ -29,7 +29,7 @@ Source from https://github.com/aerialintel/data-science-challenge
 4.Iteriate:
   Due to the low accurary, including droped weather feature in the training to see whether the accuracy will increase
 - Regression. Model: Yield ~ all except CountyName, State, and Date    
-  Accracy increased: 0.23 
+  Accracy increased: 0.23 (accuracy = clf.score(X_test, y_test))
 - SVM (polynomy): computer not respond
 - RandomForest: computer not respond
 
@@ -57,8 +57,8 @@ Challenges
 ## What did you learn along the way?
 
 -  Use one/mutiple time series features (weather data) to train and predict one label (one yield value) may not be the way to predict yield. Especialy when when the yield is stronly related to the cultivar used (missed in dataset) and enviroment condition (weather, soil, and geolocaiton), only use seasonal weather data to train the model to predict yield is inadequent. 
--  Solution: add additional data to the dataset which representive geo-features. Such as soil features, what soiltype for thegiven geolocations. For example, Farmers business network, an farmer data platform, has tested the cultivar type and soil type combination are the most important interaction which affects corn yield. 
-
+-  Solution: add geolocation related data to the dataset which representive geo-features. Such as soil features, what soiltype for thegiven geolocations. For example, Farmers business network, an farmer data platform, has tested the cultivar type and soil type combination are the most important interaction which affects corn yield. 
+-  When I exclude latitude and longtitude from the model, the accurary 
 ## If you had more time, what would you improve?
 
 
