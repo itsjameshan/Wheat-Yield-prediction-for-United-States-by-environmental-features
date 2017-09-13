@@ -1,4 +1,4 @@
-# Yield-prediction-exercise
+# Wheat yield prediction for United States by enviromental features 
 This repository is an example of how to predict winter wheat yield for several counties in the United States.
 Source from https://github.com/aerialintel/data-science-challenge
 
